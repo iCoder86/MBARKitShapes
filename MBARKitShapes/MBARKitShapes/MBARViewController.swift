@@ -42,18 +42,6 @@ class MBARViewController: UIViewController {
         case "Custom Shape": self.drawCustomShape()
         default: self.drawBox()
         }
-        
-        let node = SCNNode()
-        node.geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.03)
-        node.geometry?.firstMaterial?.specular.contents = UIColor.orange
-        node.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
-        
-        let x = randomNumbers(firstNumber: -0.3, secondNumber: 0.3)
-        let y = randomNumbers(firstNumber: -0.3, secondNumber: 0.3)
-        let z = randomNumbers(firstNumber: -0.3, secondNumber: 0.3)
-        node.position = SCNVector3(x,y,z)
-        
-        self.sceneView.scene.rootNode.addChildNode(node)
     }
     
     @IBAction func Reset(_ sender: UIButton) {
